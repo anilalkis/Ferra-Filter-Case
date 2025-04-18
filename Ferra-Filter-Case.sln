@@ -3,12 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.DataAccess", "FerraFilterCase.DataAccess\FerraFilterCase.DataAccess.csproj", "{E8D4007A-B237-4351-9EA0-CC5168A14A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerraFilterCase.DataAccess", "FerraFilterCase.DataAccess\FerraFilterCase.DataAccess.csproj", "{E8D4007A-B237-4351-9EA0-CC5168A14A1B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4} = {11B36DEE-88E2-49C4-9E04-15989E8463A4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.Entities", "FerraFilterCase.Entities\FerraFilterCase.Entities.csproj", "{11B36DEE-88E2-49C4-9E04-15989E8463A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerraFilterCase.Entities", "FerraFilterCase.Entities\FerraFilterCase.Entities.csproj", "{11B36DEE-88E2-49C4-9E04-15989E8463A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerraFilterCase.UI", "FerraFilterCase.UI\FerraFilterCase.UI.csproj", "{73D09C02-634B-43E4-B9E0-4FC21C9D2E82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11B36DEE-88E2-49C4-9E04-15989E8463A4} = {11B36DEE-88E2-49C4-9E04-15989E8463A4}
+		{E8D4007A-B237-4351-9EA0-CC5168A14A1B} = {E8D4007A-B237-4351-9EA0-CC5168A14A1B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.DTO", "FerraFilterCase.DTO\FerraFilterCase.DTO.csproj", "{361A0C97-DAD6-4753-BC06-60F598E5DD7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +32,14 @@ Global
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D09C02-634B-43E4-B9E0-4FC21C9D2E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D09C02-634B-43E4-B9E0-4FC21C9D2E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D09C02-634B-43E4-B9E0-4FC21C9D2E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D09C02-634B-43E4-B9E0-4FC21C9D2E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361A0C97-DAD6-4753-BC06-60F598E5DD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361A0C97-DAD6-4753-BC06-60F598E5DD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361A0C97-DAD6-4753-BC06-60F598E5DD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361A0C97-DAD6-4753-BC06-60F598E5DD7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

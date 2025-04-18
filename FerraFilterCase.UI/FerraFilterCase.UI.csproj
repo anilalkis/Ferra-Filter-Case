@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FerraFilterCase.DataAccess\FerraFilterCase.DataAccess.csproj" />
+    <ProjectReference Include="..\FerraFilterCase.Entities\FerraFilterCase.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

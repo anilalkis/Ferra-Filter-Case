@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FerraFilterCase.DTO\FerraFilterCase.DTO.csproj" />
     <ProjectReference Include="..\FerraFilterCase.Entities\FerraFilterCase.Entities.csproj" />
   </ItemGroup>
 

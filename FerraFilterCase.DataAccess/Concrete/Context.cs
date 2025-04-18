@@ -15,6 +15,15 @@ namespace FerraFilterCase.DataAccess.Concrete
         {
             optionsBuilder.UseSqlServer(
                 @"Server=ANIL\SQLEXPRESS;Database=FerraDb;Trusted_Connection=True;TrustServerCertificate=True");
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Ferra_orjinal_muadil>()
+                .HasNoKey();
+            modelBuilder.Entity<Filters>()
+                .HasNoKey();
         }
 
         public DbSet<Ferra_orjinal_muadil> ferra_orjinal_muadil { get; set; }
