@@ -11,11 +11,24 @@ namespace FerraFilterCase.DataAccess.Concrete
 {
     public class FiltersDal
     {
-        public List<Filters> GetAll()
+        public List<MainFormDataGridDto> GetAll()
         {
             using (var context = new Context())
             {
-                return context.filtreler.ToList(); 
+                var result = from ferraMuadil in context.ferra_orjinal_muadil
+                             join filtreler in context.filtreler
+                             on ferraMuadil.ferra_no_b equals filtreler.ferra_no_bosluksuz
+                             select new MainFormDataGridDto
+                             {
+                                 filtre_no_göster = ferraMuadil.filtre_no_goster,
+                                 firma_adi = ferraMuadil.firma_adi,
+                                 ferra_no_b = ferraMuadil.ferra_no_b,
+                                 filtre_durumu = filtreler.filtre_durumu,
+                                 foto1 = filtreler.foto1,
+                             };
+
+                return result.ToList();
+
             }
         }
 

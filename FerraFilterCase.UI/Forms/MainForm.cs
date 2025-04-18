@@ -23,7 +23,31 @@ namespace FerraFilterCase.UI.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             _filtersDal = new FiltersDal();
-            dataGridView1.DataSource = _filtersDal.GetByFerraNo("LF3321");
+
+            dataGridView1.DataSource = _filtersDal.GetAll();
+
+            dataGridView1.Columns["ferra_no_b"].HeaderText = "FERRA NO";
+            dataGridView1.Columns["filtre_durumu"].HeaderText = "FİLTRE DURUMU";
+            dataGridView1.Columns["firma_adi"].HeaderText = "ÜRETİCİ";
+            dataGridView1.Columns["filtre_no_göster"].HeaderText = "ORJİNAL NO";
+            dataGridView1.Columns["foto1"].Visible = false;
+
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            imgCol.HeaderText = "RESİM";
+            imgCol.Name = "imgCol";
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridView1.Columns.Add(imgCol);
+
+            string foto1 = "";
+            string imagePath = "";
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foto1 = row.Cells["foto1"].Value.ToString();
+                imagePath = $"C:\\Users\\Anıl\\source\\repos\\Ferra-Filter-Case\\FerraFilterCase.UI\\Images\\{foto1}";
+                row.Cells["imgCol"].Value = Image.FromFile(imagePath);
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
