@@ -26,6 +26,36 @@ namespace FerraFilterCase.UI.Forms
 
             dataGridView1.DataSource = _filtersDal.GetAll();
 
+            DataGridView1_DefaultStyle();
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = _filtersDal.GetByFerraNo(RemoveSpecialChars(textBox1.Text));
+
+            DataGridView1_DefaultStyle();
+
+            string foto1 = "";
+            string imagePath = "";
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foto1 = row.Cells["foto1"].Value.ToString();
+                imagePath = $"C:\\Users\\Anıl\\source\\repos\\Ferra-Filter-Case\\FerraFilterCase.UI\\Images\\{foto1}";
+                row.Cells["imgCol"].Value = Image.FromFile(imagePath);
+
+            }
+        }
+
+        private static string RemoveSpecialChars(string input)
+        {
+            return Regex.Replace(input, "[^a-zA-Z0-9]", "");
+        }
+
+        private void DataGridView1_DefaultStyle()
+        {
             dataGridView1.Columns["ferra_no_b"].HeaderText = "FERRA NO";
             dataGridView1.Columns["filtre_durumu"].HeaderText = "FİLTRE DURUMU";
             dataGridView1.Columns["firma_adi"].HeaderText = "ÜRETİCİ";
@@ -37,33 +67,16 @@ namespace FerraFilterCase.UI.Forms
             imgCol.Name = "imgCol";
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dataGridView1.Columns.Add(imgCol);
+        }
 
-            string foto1 = "";
-            string imagePath = "";
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView1.Columns[e.ColumnIndex].Name == "ferra_no_b")
             {
-                foto1 = row.Cells["foto1"].Value.ToString();
-                imagePath = $"C:\\Users\\Anıl\\source\\repos\\Ferra-Filter-Case\\FerraFilterCase.UI\\Images\\{foto1}";
-                row.Cells["imgCol"].Value = Image.FromFile(imagePath);
+                string ferraNo = dataGridView1.Rows[e.RowIndex].Cells["ferra_no_b"].Value.ToString();
+                FilterDetailsForm filterDetailsForm = new FilterDetailsForm(ferraNo);
+                filterDetailsForm.ShowDialog();
             }
-
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = _filtersDal.GetByFerraNo(RemoveSpecialChars(textBox1.Text));
-        }
-
-        private static string RemoveSpecialChars(string input)
-        {
-            return Regex.Replace(input, "[^a-zA-Z0-9]", "");
-        }
-
     }
 }

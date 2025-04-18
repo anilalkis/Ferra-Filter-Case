@@ -83,5 +83,13 @@ namespace FerraFilterCase.DataAccess.Concrete
             }
         }
 
+        public List<Filters> GetFilterByFerraNo(string ferraNo)
+        {
+            using(var context = new Context())
+            {
+                return context.filtreler.Where(x => x.ferra_no_bosluksuz == ferraNo).ToList();
+            }
+        }
+
     }
 }
