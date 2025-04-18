@@ -4,10 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.DataAccess", "FerraFilterCase.DataAccess\FerraFilterCase.DataAccess.csproj", "{E8D4007A-B237-4351-9EA0-CC5168A14A1B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11B36DEE-88E2-49C4-9E04-15989E8463A4} = {11B36DEE-88E2-49C4-9E04-15989E8463A4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.Entities", "FerraFilterCase.Entities\FerraFilterCase.Entities.csproj", "{11B36DEE-88E2-49C4-9E04-15989E8463A4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerraFilterCase.UI", "FerraFilterCase.UI\FerraFilterCase.UI.csproj", "{A086C5F9-841C-406F-A770-54BA6BB0FAAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +24,6 @@ Global
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B36DEE-88E2-49C4-9E04-15989E8463A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A086C5F9-841C-406F-A770-54BA6BB0FAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A086C5F9-841C-406F-A770-54BA6BB0FAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A086C5F9-841C-406F-A770-54BA6BB0FAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A086C5F9-841C-406F-A770-54BA6BB0FAAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
