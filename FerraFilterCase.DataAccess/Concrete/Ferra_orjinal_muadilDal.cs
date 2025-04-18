@@ -17,31 +17,5 @@ namespace FerraFilterCase.DataAccess.Concrete
             }
         }
 
-        public void Add(Ferra_orjinal_muadil entity)
-        {
-            using (var context = new Context())
-            {
-                context.ferra_orjinal_muadil.Add(entity);
-                context.SaveChanges();
-            }
-        }
-
-        public void Update(Ferra_orjinal_muadil entity)
-        {
-            using (var context = new Context())
-            {
-                context.ferra_orjinal_muadil.Update(entity);
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Ferra_orjinal_muadil entity)
-        {
-            using (var context = new Context())
-            {
-                context.ferra_orjinal_muadil.Remove(entity);
-                context.SaveChanges();
-            }
-        }   
     }
 }
