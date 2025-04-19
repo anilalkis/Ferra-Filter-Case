@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -52,33 +51,25 @@
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // button1
-            // 
-            button1.Location = new Point(199, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(58, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Ara";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 99);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(758, 318);
+            dataGridView1.Size = new Size(973, 404);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1124, 553);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Name = "MainForm";
@@ -93,7 +84,6 @@
 
         private Label label1;
         private TextBox textBox1;
-        private Button button1;
         private DataGridView dataGridView1;
     }
 }

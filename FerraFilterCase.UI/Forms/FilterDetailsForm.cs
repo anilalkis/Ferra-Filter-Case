@@ -25,7 +25,8 @@ namespace FerraFilterCase.UI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(new UC_Filter(_ferraNo));
         }
 
         private void FilterDetailsForm_Load(object sender, EventArgs e)
@@ -40,6 +41,12 @@ namespace FerraFilterCase.UI.Forms
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(new UC_CaprazReferans());
         }
     }
 }

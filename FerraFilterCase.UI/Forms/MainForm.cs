@@ -35,15 +35,14 @@ namespace FerraFilterCase.UI.Forms
         {
             dataGridView1.DataSource = _filtersDal.GetByFerraNo(RemoveSpecialChars(textBox1.Text));
 
-            DataGridView1_DefaultStyle();
-
             string foto1 = "";
             string imagePath = "";
+            string projectPath = Directory.GetParent(Application.StartupPath).Parent.Parent.Parent.FullName;
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 foto1 = row.Cells["foto1"].Value.ToString();
-                imagePath = $"C:\\Users\\Anıl\\source\\repos\\Ferra-Filter-Case\\FerraFilterCase.UI\\Images\\{foto1}";
+                imagePath = $"{projectPath}\\Images\\{foto1}";
                 row.Cells["imgCol"].Value = Image.FromFile(imagePath);
 
             }
@@ -62,20 +61,32 @@ namespace FerraFilterCase.UI.Forms
             dataGridView1.Columns["filtre_no_göster"].HeaderText = "ORJİNAL NO";
             dataGridView1.Columns["foto1"].Visible = false;
 
+
+
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             imgCol.HeaderText = "RESİM";
             imgCol.Name = "imgCol";
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dataGridView1.Columns.Add(imgCol);
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.Columns[e.ColumnIndex].Name == "ferra_no_b")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "ferra_no_b")
             {
                 string ferraNo = dataGridView1.Rows[e.RowIndex].Cells["ferra_no_b"].Value.ToString();
                 FilterDetailsForm filterDetailsForm = new FilterDetailsForm(ferraNo);
                 filterDetailsForm.ShowDialog();
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns["ferra_no_b"].Index == e.ColumnIndex)
+            {
+                e.CellStyle.ForeColor = Color.Red;
+                e.CellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
             }
         }
     }
