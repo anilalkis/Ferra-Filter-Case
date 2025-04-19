@@ -18,6 +18,11 @@ namespace FerraFilterCase.DataAccess.Concrete
             }
         }
 
+        /// <summary>
+        /// Tüm verileri getirir.
+        /// </summary>
+        /// <param name="orjinal_muadil"></param>
+        /// <returns></returns>
         public List<CaprazDataGridDto> GetCaprazDatas(string orjinal_muadil)
         {
             using(var context = new Context())
@@ -51,6 +56,12 @@ namespace FerraFilterCase.DataAccess.Concrete
             }
         }
 
+        /// <summary>
+        /// Çapraz Referans için tablo verilerini firma ismine göre filtreleyerek getirir. 2 parametre alıyor ilk parametre firma ismi. 2. parametreye ise istediğiniz gibi filtleme yapmak için 1 veya 2 yazabilirsiniz.
+        /// </summary>
+        /// <param name="firma_adi"></param>
+        /// <param name="orjinal_muadil"></param>
+        /// <returns></returns>
         public List<CaprazDataGridDto> GetCaprazDatasByFirm(string firma_adi , string orjinal_muadil)
         {
             using (var context = new Context())
